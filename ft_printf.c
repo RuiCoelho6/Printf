@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpires-c <rpires-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/08 14:45:49 by jperpect          #+#    #+#             */
-/*   Updated: 2024/05/21 16:18:33 by rpires-c         ###   ########.fr       */
+/*   Created: 2024/05/22 14:10:53 by rpires-c          #+#    #+#             */
+/*   Updated: 2024/05/22 15:27:32 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 int			ft_printf(const char *str, ...);
 
-static int	identifire(char id, va_list args)
+static int	identifier(char id, va_list args)
 {
 	if (id == 'c')
 		return (ft_putchar_fd(va_arg(args, int), 1));
 	else if (id == 's')
 		return (ft_putstr_fd(va_arg(args, char *), 1));
 	else if (id == 'p')
-		return (ft_printp(va_arg(args, unsigned long)));
+		return (ft_printpointer(va_arg(args, unsigned long)));
 	else if (id == 'd')
 		return (ft_putnbr_base(va_arg(args, int), "0123456789", 0));
 	else if (id == 'i')
@@ -52,7 +52,7 @@ int	ft_printf(const char *str, ...)
 	{
 		if (str[i] == '%')
 		{
-			percentagens_econtradas += identifire(str[i + 1], args);
+			percentagens_econtradas = identifier(str[i+1], args);
 			cont += 2;
 			if ((int)ft_strlen(str) < i + 2)
 				break ;
@@ -64,10 +64,11 @@ int	ft_printf(const char *str, ...)
 	va_end(args);
 	return (i + percentagens_econtradas - cont);
 }
-/* int main ()
+
+int main ()
 {
 	int a = ft_printf("%s t", "teste1", "teste2");
- 	int b = printf("%s t", "teste1", "teste2");
-	printf("size %d size orgin %d", a, b);
+ 	int b = printf("t %s", "teste1", "teste2");
+	printf("size %d size origin %d", a, b);
 	return (0);
-} */
+}

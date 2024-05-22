@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rpires-c <rpires-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/03 03:54:28 by jperpect          #+#    #+#             */
-/*   Updated: 2024/05/08 11:44:14 by jperpect         ###   ########.fr       */
+/*   Created: 2024/05/22 14:41:06 by rpires-c          #+#    #+#             */
+/*   Updated: 2024/05/22 15:08:56 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printp(unsigned long decimal)
+int	ft_printpointer(unsigned long decimal)
 {
 	char	*base;
 	int		a;
@@ -37,4 +37,4 @@ ft_putchar_fd('\n',1);
 printf("%d",test );
 printf("\n%p",test );
 
-}  */
+} */

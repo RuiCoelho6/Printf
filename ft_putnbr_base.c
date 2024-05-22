@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rpires-c <rpires-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/06 09:46:35 by jperpect          #+#    #+#             */
-/*   Updated: 2024/05/10 11:29:40 by jperpect         ###   ########.fr       */
+/*   Created: 2024/05/22 14:41:15 by rpires-c          #+#    #+#             */
+/*   Updated: 2024/05/22 14:53:21 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,12 @@ int	ft_putnbr_base(long nbr, char *base, int neg)
 	return (len);
 }
 
-//  int main(int ac,char** av)
-// {
-// 	char *base = "0123456789ABCDEF";
-// 	char *base_10 = "0123456789";
-// 	//int a = ft_putnbr_base(atoi( av[1]),base);
-// 	int a = ft_putnbr_base(LONG_MIN,base);
-// 	printf("\n %p  ", LONG_MIN, LONG_MAX);
-// 	//ft_putnbr_base(a,base_10);
-// }
+/*  int main(int ac,char** av)
+{
+	char *base = "0123456789ABCDEF";
+	char *base_10 = "0123456789";
+	//int a = ft_putnbr_base(atoi( av[1]),base);
+	int a = ft_putnbr_base(LONG_MIN,base);
+	printf("\n %p  ", LONG_MIN, LONG_MAX);
+	//ft_putnbr_base(a,base_10);
+} */
