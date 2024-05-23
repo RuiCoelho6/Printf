@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rpires-c <rpires-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 09:42:42 by jperpect          #+#    #+#             */
-/*   Updated: 2024/05/07 15:48:31 by jperpect         ###   ########.fr       */
+/*   Created: 2024/05/23 14:24:13 by rpires-c          #+#    #+#             */
+/*   Updated: 2024/05/23 15:05:54 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putchar_fd(char c, int fd)
+int	ft_putstr(char *s)
 {
-	write(fd, &c, 1);
-	return (1);
+	int	i;
+
+	i = 0;
+	if (!s)
+		s = "(null)";
+	while (s[i])
+		write(1, &s[i++], 1);
+	return (i);
 }
 
-/*
-int main (void)
+/* int	main(int ac , char **av)
 {
-    ft_putchar_fd('a',1);
-    ft_putchar_fd('\n',1);
-    ft_putchar_fd('a',1);
-}*/
+	char *teste = "d";
+    ft_putstr(teste);
+} */

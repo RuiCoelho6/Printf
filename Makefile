@@ -6,7 +6,7 @@
 #    By: rpires-c <rpires-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/08 14:51:15 by jperpect          #+#    #+#              #
-#    Updated: 2024/05/22 14:59:47 by rpires-c         ###   ########.fr        #
+#    Updated: 2024/05/23 15:28:27 by rpires-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,7 @@ FLAGS = -Wall -Wextra -Werror
 NAME = libftprintf.a
 
 SOURCES = ft_printf.c ft_printp.c ft_putnbr_base.c \
-ft_putstr_fd.c ft_putchar_fd.c ft_strlen.c \
- 
+ft_putstr.c libft/ft_strlen.c\
 
 OBJECT = $(SOURCES:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: rpires-c <rpires-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 14:41:06 by rpires-c          #+#    #+#             */
-/*   Updated: 2024/05/22 15:08:56 by rpires-c         ###   ########.fr       */
+/*   Updated: 2024/05/23 14:23:25 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int	ft_printpointer(unsigned long decimal)
 	base = "0123456789abcdef";
 	a = 0;
 	if (decimal == 0)
-		return (ft_putstr_fd("(nil)", 1));
-	ft_putstr_fd("0x", 1);
+		return (ft_putstr("(nil)"));
+	ft_putstr("0x");
 	a = ft_putnbr_base(decimal, base, 1);
 	return (a + 2);
 }

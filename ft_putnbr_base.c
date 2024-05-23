@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpires-c <rpires-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/22 14:41:15 by rpires-c          #+#    #+#             */
-/*   Updated: 2024/05/22 14:53:21 by rpires-c         ###   ########.fr       */
+/*   Created: 2024/05/23 15:25:13 by rpires-c          #+#    #+#             */
+/*   Updated: 2024/05/23 15:25:16 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ static int	nuber(unsigned long nbr, int base, char *b, int len)
 	}
 	else if (nbr > 0)
 	{
-		ft_putchar_fd(b[nbr], 1);
+		ft_putstr(&b[nbr]);
 		len++;
 	}
-	ft_putchar_fd(b[temp], 1);
+	ft_putstr(&b[temp]);
 	len++;
 	return (len);
 }
@@ -43,7 +43,7 @@ int	ft_putnbr_base(long nbr, char *base, int neg)
 	{
 		nbr = -(nbr);
 		len++;
-		ft_putchar_fd('-', 1);
+		ft_putstr("-");
 	}
 	len = nuber(nbr, len_base, base, len);
 	return (len);
