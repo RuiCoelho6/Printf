@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rpires-c <rpires-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/05/08 14:51:15 by jperpect          #+#    #+#              #
-#    Updated: 2024/05/27 10:50:33 by rpires-c         ###   ########.fr        #
+#    Created: 2024/05/27 11:38:40 by rpires-c          #+#    #+#              #
+#    Updated: 2024/05/27 14:43:51 by rpires-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,12 +14,10 @@ FLAGS = -Wall -Wextra -Werror
 
 NAME = libftprintf.a
 
-SOURCES = ft_printf.c ft_printp.c ft_putnbr_base.c \
-ft_putstrr.c ft_putcharr.c libft/ft_strlen.c\
+SOURCES = ft_printf.c ft_print_pointer.c ft_putnbr_base.c \
+ft_putstrlen.c ft_putchar.c libft/ft_strlen.c\
 
 OBJECT = $(SOURCES:.c=.o)
-
-RM = rm -f
 
 all: $(NAME)
 
@@ -30,10 +28,10 @@ $(NAME): $(OBJECT)
 	cc -c $(FLAGS) -o $@ $<  
 
 clean:
-	$(RM)  $(OBJECT)
+	rm -f  $(OBJECT)
 
 fclean: clean
-	$(RM) $(NAME) 
+	rm -f $(NAME) 
 
 re: fclean all
 
