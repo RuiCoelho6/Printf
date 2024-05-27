@@ -6,68 +6,70 @@
 /*   By: rpires-c <rpires-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 14:10:53 by rpires-c          #+#    #+#             */
-/*   Updated: 2024/05/23 15:21:25 by rpires-c         ###   ########.fr       */
+/*   Updated: 2024/05/27 11:07:03 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int			ft_printf(const char *str, ...);
-
-static int	identifier(char id, va_list args)
+static int identifire(char id,va_list args)
 {
-	if (id == 'c')
-		return (ft_putstr(va_arg(args, char *)));
+	if(id == 'c')
+		return(ft_putcharr( va_arg(args,int ),1));
 	else if (id == 's')
-		return (ft_putstr(va_arg(args, char *)));
+		return(ft_putstrr(va_arg(args,char *),1));
 	else if (id == 'p')
-		return (ft_printpointer(va_arg(args, unsigned long)));
+		return(ft_printp(va_arg(args,unsigned long )));
 	else if (id == 'd')
-		return (ft_putnbr_base(va_arg(args, int), "0123456789", 0));
+	 	return(ft_putnbr_base(va_arg(args, int   ), "0123456789",0));
 	else if (id == 'i')
-		return (ft_putnbr_base(va_arg(args, int), "0123456789", 0));
+		return(ft_putnbr_base(va_arg(args, int   ), "0123456789",0));
 	else if (id == 'u')
-		return (ft_putnbr_base(va_arg(args, unsigned int), "0123456789", 1));
+	 return(ft_putnbr_base(va_arg(args, unsigned int  ), "0123456789",1));
 	else if (id == 'x')
-		return (ft_putnbr_base(va_arg(args, unsigned), "0123456789abcdef", 0));
+	 return(ft_putnbr_base(va_arg(args, unsigned   ), "0123456789abcdef",0));
 	else if (id == 'X')
-		return (ft_putnbr_base(va_arg(args, unsigned), "0123456789ABCDEF", 0));
+	 return(ft_putnbr_base(va_arg(args, unsigned   ), "0123456789ABCDEF",0));
 	else if (id == '%')
-		return (ft_putstr(va_arg(args, char *)));
-	return (0);
+	 return(ft_putcharr('%',1));
+	return(0);
 }
 
-int	ft_printf(const char *str, ...)
-{
-	static int		i;
-	static int		percentagens_econtradas;
-	static int		cont;
-	char *string;
-	va_list	args;
 
-	string = (char *)str;
+int ft_printf(const char *str, ...)
+{	
+	int cont;
+	int add;
+	int i;
+	
+	add =0;
+	cont = 0;
+	i = 0;
+	
+	va_list args;
 	va_start(args, str);
-	while (str[i] != '\0')
+	while(str[cont] != '\0')
 	{
-		if (str[i] == '%')
+		if(str[cont] == '%')
 		{
-			percentagens_econtradas = identifier(str[i + 1], args);
+			add = add + identifire(str[cont+1],args);
+			
 			cont += 2;
-			if ((int)ft_strlen(str) < i + 2)
-				break ;
-			i += 2;
+				i+=2;
 		}
 		else
-			ft_putstr(&string[i++]);
+		 ft_putcharr(str[cont++],1);
 	}
 	va_end(args);
-	return (i + percentagens_econtradas - cont);
+	return (cont +add- i);
 }
-
-int main ()
+/* int main ()
 {
-	int a = ft_printf("%s t", "teste1", "teste2");
- 	int b = printf("t %s", "teste1", "teste2");
-	printf("size %d size origin %d", a, b);
-	return (0);
-}
+	void *ptr = (char *)0x7ffeefbff710; // Exemplo de ponteiro void *
+	
+	int a = ft_printf(" %c%p \n",'a',-1);
+	int b = printf(" %c%p \n",'a',-1);
+	//ft_putstr_fd(NULL,1);
+	printf("%d a,%d b ",a,b);
+	
+} */

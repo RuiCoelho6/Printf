@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putcharr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpires-c <rpires-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/22 14:40:57 by rpires-c          #+#    #+#             */
-/*   Updated: 2024/05/27 10:54:30 by rpires-c         ###   ########.fr       */
+/*   Created: 2024/05/27 10:45:47 by rpires-c          #+#    #+#             */
+/*   Updated: 2024/05/27 10:52:56 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-#define FT_PRINTF_H
+#include "ft_printf.h"
 
-#include <aio.h>
-#include <stdarg.h>
-#include <unistd.h>
-#include "libft/libft.h"
+int	ft_putcharr(char c, int fd)
+{
+	write(fd, &c, 1);
+    return(1);
+}
 
-int ft_printf(const char *formant, ...);
-
-int ft_printp(unsigned long int decimal);
-
-int ft_putnbr_base(  long int nbr, char *base,int neg);
-
-int	ft_putcharr(char c, int fd);
-
-int	ft_putstrr(char *s, int fd);
-
-#endif
+/*
+int main (void)
+{
+    ft_putchar_fd('a',1);
+    ft_putchar_fd('\n',1);
+    ft_putchar_fd('a',1);
+}*/
