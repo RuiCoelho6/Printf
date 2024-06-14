@@ -6,7 +6,7 @@
 /*   By: rpires-c <rpires-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 14:40:57 by rpires-c          #+#    #+#             */
-/*   Updated: 2024/05/27 14:44:03 by rpires-c         ###   ########.fr       */
+/*   Updated: 2024/06/12 14:35:06 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_printf(const char *formant, ...);
 
 int	ft_print_pointer(unsigned long int decimal);
 
-int	ft_putnbr_base(  long int nbr, char *base,int neg);
+int	ft_putnbr_base(long int nbr, char *base, int lock_neg);
 
 int	ft_putchar(char c);
 

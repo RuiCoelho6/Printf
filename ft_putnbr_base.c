@@ -6,20 +6,20 @@
 /*   By: rpires-c <rpires-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 15:25:13 by rpires-c          #+#    #+#             */
-/*   Updated: 2024/05/27 14:34:23 by rpires-c         ###   ########.fr       */
+/*   Updated: 2024/06/12 13:25:14 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	nuber(unsigned long nbr, int base, char *b, int len)
+static int	logic(unsigned long nbr, int base, char *b, int len)
 {
-	long int temp;
-	temp = nbr%base;
-	nbr = nbr/base;
-	
+	long int	temp;
+
+	temp = nbr % base;
+	nbr = nbr / base;
 	if (nbr >= (unsigned long)base){
-	 len = nuber(nbr, base, b, len);
+		len = logic(nbr, base, b, len);
 	}
 	else if (nbr > 0)
 	{
@@ -31,22 +31,20 @@ static int	nuber(unsigned long nbr, int base, char *b, int len)
 	return(len);
 }
 
-
-
-int	ft_putnbr_base( long  nbr, char *base, int neg)
+int	ft_putnbr_base(long int nbr, char *base, int lock_neg)
 {
-	int			len_base;
+	int	len_base;
 	int	len;
 
 	len = 0;
-	len_base = ft_strlen(base);
-	if (nbr < 0 && neg != 1)
+	if (nbr < 0 && lock_neg != 1)
 	{
 		nbr = -(nbr);
 		len++;
 		ft_putchar('-');
 	}
-	len = nuber(nbr, len_base, base, len);
+	len_base = ft_strlen(base);
+	len = logic(nbr, len_base, base, len);
 	return(len);
 }
 

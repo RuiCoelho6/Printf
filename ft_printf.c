@@ -6,7 +6,7 @@
 /*   By: rpires-c <rpires-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 14:10:53 by rpires-c          #+#    #+#             */
-/*   Updated: 2024/05/27 14:43:35 by rpires-c         ###   ########.fr       */
+/*   Updated: 2024/06/12 13:40:04 by rpires-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int	identifier(char id,va_list args)
 {
 	if(id == 'c')
-		return(ft_putchar( va_arg(args, int )));
+		return(ft_putchar(va_arg(args, int )));
 	else if (id == 's')
 		return(ft_putstrlen(va_arg(args, char *)));
 	else if (id == 'p')
@@ -34,7 +34,6 @@ static int	identifier(char id,va_list args)
 	 return(ft_putchar('%'));
 	return(0);
 }
-
 
 int	ft_printf(const char *str, ...)
 {	
@@ -61,10 +60,5 @@ int	ft_printf(const char *str, ...)
 
 /* int main ()
 {
-	void *ptr = (char *)0x7ffeefbff710;
-	
-	int a = ft_printf(" %c%d \n",'a',-1);
-	int b = printf(" %c%d \n",'a',-1);
-	printf("%d a,%d b ",a,b);
-	
+	TEST(8, print(" %p %p ", ULONG_MAX, -ULONG_MAX));
 } */
