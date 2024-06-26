@@ -14,15 +14,16 @@
 
 int	ft_print_pointer(unsigned long decimal)
 {
-	char		*base = "0123456789abcdef";
-	int	a;
+	char	*base;
+	int		a;
 
+	base = "0123456789abcdef";
 	a = 0;
 	if (decimal == 0)
-		return(ft_putstrlen("(nil)"));
+		return (ft_putstrlen("(nil)"));
 	ft_putstrlen("0x");
 	a = ft_putnbr_base(decimal, base, 1);
-	return(a + 2);
+	return (a + 2);
 }
 
 /*int main()

@@ -18,7 +18,8 @@ static int	logic(unsigned long nbr, int base, char *b, int len)
 
 	temp = nbr % base;
 	nbr = nbr / base;
-	if (nbr >= (unsigned long)base){
+	if (nbr >= (unsigned long)base)
+	{
 		len = logic(nbr, base, b, len);
 	}
 	else if (nbr > 0)
@@ -28,7 +29,7 @@ static int	logic(unsigned long nbr, int base, char *b, int len)
 	}
 	ft_putchar(b[temp]);
 	len++;
-	return(len);
+	return (len);
 }
 
 int	ft_putnbr_base(long int nbr, char *base, int lock_neg)
@@ -45,7 +46,7 @@ int	ft_putnbr_base(long int nbr, char *base, int lock_neg)
 	}
 	len_base = ft_strlen(base);
 	len = logic(nbr, len_base, base, len);
-	return(len);
+	return (len);
 }
 
 //  int main(int ac,char** av)
@@ -56,4 +57,4 @@ int	ft_putnbr_base(long int nbr, char *base, int lock_neg)
 // 	int a = ft_putnbr_base(LONG_MIN,base);
 // 	printf("\n %p  ", LONG_MIN, LONG_MAX);
 // 	//ft_putnbr_base(a,base_10);
-// } 
+// }

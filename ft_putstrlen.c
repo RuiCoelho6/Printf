@@ -21,7 +21,7 @@ int	ft_putstrlen(char *s)
 		s = "(null)";
 	while (s[i] != '\0')
 		ft_putchar(s[i++]);
-	return(i);
+	return (i);
 }
 /* int	main(int ac , char **av)
 {

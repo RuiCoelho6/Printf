@@ -6,7 +6,7 @@
 #    By: rpires-c <rpires-c@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/27 11:38:40 by rpires-c          #+#    #+#              #
-#    Updated: 2024/05/27 14:43:51 by rpires-c         ###   ########.fr        #
+#    Updated: 2024/06/21 14:45:06 by rpires-c         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ fclean: clean
 re: fclean all
 
 exec:
-	cc -g $(SOURCES) -lbsd
+	cc -g $(SOURCES)
 
 norm: 
 	yes y | python3 -m c_formatter_42 -c $(SOURCES)
